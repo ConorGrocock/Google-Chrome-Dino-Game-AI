@@ -39,6 +39,18 @@ class Population {
       }
     }
   }
+  
+  //------------------------------------------------------------------------------------------------------------------------------------------
+  //Get number of players still alive
+  
+  int playersAlive() {
+    int alive = 0;
+     for (int i = 0; i< pop.size(); i++) {
+      if (!pop.get(i).dead) alive++;
+     }
+     return alive;
+  }
+  
   //------------------------------------------------------------------------------------------------------------------------------------------
   //returns true if all the players are dead      sad
   boolean done() {

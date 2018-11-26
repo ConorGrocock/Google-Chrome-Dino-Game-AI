@@ -30,10 +30,10 @@ ArrayList<Ground> grounds = new ArrayList<Ground>();
 
 
 int obstacleTimer = 0;
-int minimumTimeBetweenObstacles = 60;
+int minimumTimeBetweenObstacles = 30;
 int randomAddition = 0;
 int groundCounter = 0;
-float speed = 10;
+float speed = 20;
 
 int groundHeight = 250;
 int playerXpos = 150;
@@ -61,7 +61,7 @@ void setup() {
   bird = loadImage("berd.png");
   bird1 = loadImage("berd2.png");
 
-  pop = new Population(500); //<<number of dinosaurs in each generation
+  pop = new Population(2000); //<<number of dinosaurs in each generation
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 void draw() {
@@ -153,7 +153,7 @@ void writeInfo() {
     text("Duck", 1220, 318);
   } else { //evolving normally 
     text("Score: " + floor(pop.populationLife/3.0), 30, height - 30);
-    //text(, width/2-180, height-30);
+    text("Alive: " + pop.playersAlive(), width/2-180, height-30);
     textAlign(RIGHT);
 
     text("Gen: " + (pop.gen +1), width -40, height-30);
